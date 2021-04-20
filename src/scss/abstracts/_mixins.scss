@@ -1,0 +1,54 @@
+///
+/// @param {"flex-start" | "flex-end" | "center" | "space-around" | "space-between" | "baseline"} $justify [flex-start]
+/// @param {"flex-start" | "flex-end" | "center" | "baseline" | "stretch"} $align [flex-start]
+/// @param {"column" | "row" | "column-reverse" | "row-reverse" | "inherit"} $direction [row]
+
+@mixin flex-box($justify: flex-start, $align: flex-start, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 599px:      phone-only
+600 - 899px:    tablet-portrait-up
+900 - 1199px:   tablet-landscape-up
+[1200 - 1800]   desktop-up
+1800px + :      big-desktop-up
+$size arguement choices:
+-phone-only
+-tablet-portrait-up
+-tablet-landscape-up
+-desktop-up
+-big-desktop-up
+1em = 16px
+*/
+
+///
+/// @param {phone-only | tablet-portrait-up | tablet-landscape-up | desktop-up | big-desktop-up} $size
+
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == tablet-portrait-up {
+    @media (min-width: 600px) {
+      @content;
+    }
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: 900px) {
+      @content;
+    }
+  } @else if $size == desktop-up {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == big-desktop-up {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}

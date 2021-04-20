@@ -1,0 +1,61 @@
+.modal {
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__box {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    border-radius: $border-radius-large;
+    border: 1px solid $color-font-dark;
+    background-color: #fff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    padding: 3rem;
+    z-index: 1000;
+  }
+
+  &__input {
+    font-size: $default-font-size;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  &__notes {
+    @include flex-box($direction: column);
+    textarea {
+      background: rgba(1, 1, 1, 0.05);
+      padding: 1rem;
+      &::placeholder {
+        padding: 1rem;
+      }
+      resize: none;
+    }
+    margin-bottom: 2rem;
+  }
+
+  &__icon {
+    mix-blend-mode: multiply;
+    color: $color-legacy-primary;
+    font-size: 2.5rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .button-style {
+    margin-bottom: -2rem;
+    @include flex-box(flex-end);
+    button:first-child {
+      margin-right: 1rem;
+    }
+  }
+}

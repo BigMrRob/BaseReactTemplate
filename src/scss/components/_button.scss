@@ -1,0 +1,65 @@
+.custom-button {
+  padding: $button-padding;
+  border: none;
+  color: $color-gray-lightest;
+  border-radius: $border-radius;
+  width: 30rem;
+}
+
+.btn {
+  border: none;
+  width: 8rem;
+  height: 4rem;
+  border-radius: 60px;
+  text-align: center;
+  cursor: pointer;
+
+  &--outline {
+    border: 2px solid $color-blue-dark;
+    background-color: white;
+    color: $color-blue-dark;
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+    p {
+      font-weight: 600;
+    }
+  }
+  &--primary {
+    border: 2px solid $color-blue-dark;
+    background-color: $color-blue-dark;
+    color: white;
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+    p {
+      font-weight: 600;
+    }
+  }
+
+  &--edit {
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    color: $color-blue-primary;
+    transition: all 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      color: $color-legacy-primary;
+    }
+  }
+
+  &--modal {
+    border: none;
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+  }
+}
